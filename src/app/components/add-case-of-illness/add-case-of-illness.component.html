@@ -1,0 +1,25 @@
+<form  (ngSubmit)="createIllness()">
+  <div class="mb-3">
+    <label for="patient" class="form-label">Patients</label>
+    <select id="patient" name="patient" class="form-select"
+
+            [(ngModel)]="data.patient_id">
+      <option *ngFor="let patient of patients" value="{{ patient.id}}">{{patient.fio}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="date" class="form-label">Open date</label>
+    <input type="date"
+           id="date"
+           name="open_date" class="form-control" [(ngModel)]="data.open_date"
+           [value]="data.open_date">
+  </div>
+  <div class="mb-3">
+    <label for="diagnose" class="form-label">Diagnose</label>
+    <select name="diagnose" id="diagnose" class="form-select" [(ngModel)]="data.diagnose_id">>
+      <option value="null">Без диагноза</option>
+      <option *ngFor="let diagnose of diagnoses" value="{{ diagnose.id }}">{{ diagnose.diagnose }}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

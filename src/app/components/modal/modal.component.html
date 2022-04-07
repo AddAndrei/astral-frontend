@@ -1,0 +1,19 @@
+<form  >
+
+  <div class="mb-3">
+    <label for="date" class="form-label">Close date</label>
+    <input type="date"
+           id="date"
+           name="open_date" class="form-control"
+           [(ngModel)]="date"
+           [value]="date">
+  </div>
+  <div class="mb-3">
+    <label for="diagnose" class="form-label">Diagnose</label>
+    <select name="diagnose" id="diagnose" class="form-select" [(ngModel)]="diagnose_id">
+      <option value="null">Без диагноза</option>
+      <option *ngFor="let diagnose of data.diagnoses" value="{{ diagnose.id }}">{{ diagnose.diagnose }}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="updateIllness()" >Close</button>
+</form>

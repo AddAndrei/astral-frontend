@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a href="" routerLink="/medical-history">back</a>
+    </div>
+  </div>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">UID</th>
+    <th scope="col">Patient</th>
+    <th scope="col">Diagnose</th>
+    <th scope="col">Open date</th>
+    <th scope="col">Close date</th>
+    <th></th>
+  </tr>
+  </thead>
+    <tr *ngFor="let item of illness">
+      <td>{{ item.uuid }}</td>
+      <td>{{ item.patient }}</td>
+      <td>{{ item.diagnose }}</td>
+      <td>{{ item.open_date }}</td>
+      <td>{{ item.close_date }}</td>
+      <td>
+        <button class="btn btn-warning btn-sm" (click)="deleteIllness()">Delete</button>
+        <button class="btn btn-warning btn-sm" (click)="openModal()" >Close</button>
+      </td>
+    </tr>
+
+</table>

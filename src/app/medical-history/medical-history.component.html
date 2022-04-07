@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">UID</th>
+    <th scope="col">Patient</th>
+    <th scope="col">Diagnose</th>
+    <th scope="col">Open date</th>
+    <th scope="col">Close date</th>
+    <th></th>
+  </tr>
+  </thead>
+    <tr *ngFor="let history of medicalHistory">
+      <td style="cursor: pointer;" routerLink="/illness/{{ history.id }}">{{ history.uuid }}</td>
+      <td>{{ history.patient }}</td>
+      <td>{{ history.diagnose ? history.diagnose : "без диагноза"}}</td>
+      <td>{{ history.open_date}}</td>
+      <td>{{ history.close_date}}</td>
+      <td>
+        <a class="nav-link" aria-current="page"
+           routerLink="/illness/{{ history.id }}" >Просмотр</a>
+      </td>
+    </tr>
+</table>
+
+

@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ФИО</th>
+      <th scope="col">Пол</th>
+      <th scope="col">Дата рождения</th>
+      <th scope="col">Дата смерти</th>
+    </tr>
+  </thead>
+    <tr *ngFor="let patient of patients">
+      <td>{{ patient.fio }}</td>
+      <td>{{ patient.gender ? 'M' : 'Ж' }}</td>
+      <td>{{ patient.birth_date}}</td>
+      <td>{{ patient.die_date }}</td>
+    </tr>
+</table>
